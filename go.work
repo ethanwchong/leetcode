@@ -1,0 +1,23 @@
+go 1.21.5
+
+use (
+	./lc1004_maxConsecutiveOnes
+	./lc11_containerwithmostwater
+	./lc13_romantointeger
+	./lc1431_greatestamongkids
+	./lc1456_maxNumberOfVowelsInASubstringOfGivenLength
+	./lc151_reversewords
+	./lc1679_maxnumberofksumpairs
+	./lc1768_mergestringsalternately
+	./lc1_twoSum
+	./lc238_movezeroes
+	./lc238_productofarrayexceptself
+	./lc334_increasingtripletsubsequence
+	./lc345_reversevowel
+	./lc392_issubsequence
+	./lc443_stringcompression
+	./lc605_plantingflowers
+	./lc643_maxAverageSubarrayI
+	./lc75_gcd
+	./lc9_palindrome
+)
