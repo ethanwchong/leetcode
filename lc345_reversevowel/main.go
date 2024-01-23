@@ -4,26 +4,27 @@ import (
 	"fmt"
 )
 
-func isVowel(c rune) bool {
-	return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U'
-}
-
 func reverseVowels(s string) string {
-	//make a slice of rune
 	runeSlc := make([]rune, len(s))
-
-	low, high := 0, len(runeSlc)-1
-
 	for i, r := range s {
 		runeSlc[i] = r
 	}
 
+	vowel := map[rune]bool{
+		'a': true,
+		'e': true,
+		'i': true,
+		'o': true,
+		'u': true,
+	}
+
+	low, high := 0, len(runeSlc)-1
 	for low < high {
-		if !isVowel(runeSlc[high]) {
+		if !vowel[runeSlc[high]] {
 			high--
 			continue
 		}
-		if !isVowel(runeSlc[low]) {
+		if !vowel[runeSlc[low]] {
 			low++
 			continue
 		}

@@ -28,14 +28,35 @@ func compress(chars []byte) int {
 	return len(chars)
 }
 
+func compress2(chars []byte) int {
+	//var writer int = 0
+	//var nextChar int = 0
+	var charCounter int = 0
+
+	for i := 0; i < len(chars)-1; i++ {
+		if chars[i] != chars[i+1] {
+			charCounter++
+		}
+	}
+	return (charCounter + 1) * 2
+
+}
+
 func main() {
-	fmt.Println(compress([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}))
-	fmt.Println(compress([]byte{'a'}))
-	fmt.Println(compress([]byte{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'}))
-	fmt.Println(compress([]byte{'a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c'}))
+	fmt.Println(compress([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}))                               //6
+	fmt.Println(compress([]byte{'a'}))                                                             //1
+	fmt.Println(compress([]byte{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'})) //4
+	fmt.Println(compress([]byte{'a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c'}))                     //6
+	fmt.Println("==========")
+	fmt.Println(compress2([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}))                               //6
+	fmt.Println(compress2([]byte{'a'}))                                                             //1
+	fmt.Println(compress2([]byte{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'})) //4
+	fmt.Println(compress2([]byte{'a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c'}))                     //6
 }
 
 /*
+443. String Compression
+
 Given an array of characters chars, compress it using the following algorithm:
 
 Begin with an empty string s. For each group of consecutive repeating characters in chars:

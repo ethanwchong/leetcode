@@ -6,34 +6,6 @@ import (
 )
 
 func increasingTriplet(nums []int) bool {
-	/*var first int
-	var second int
-	for i := 0; i < len(nums)-1; i++ {
-		if nums[i] < nums[i+1] {
-			first = nums[i]
-			second = nums[i+1]
-			break
-		}
-	}
-	if first == 0 && second == 0 {
-		return false
-	}
-	for i := 0; i < len(nums); i++ {
-
-		if nums[i] <= first {
-			first = nums[i]
-			continue
-		}
-		if nums[i] <= second && nums[i] > first {
-			second = nums[i]
-			continue
-		}
-		if nums[i] > first && nums[i] > second {
-			return true
-		}
-	}
-	return false
-	*/
 	first := math.MaxInt
 	second := math.MaxInt
 	for _, n := range nums {
