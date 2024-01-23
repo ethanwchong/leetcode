@@ -2,10 +2,12 @@ go 1.21.5
 
 use (
 	./lc1004_maxConsecutiveOnes
+	./lc1071_greatestCommonDivisorOfStrings
 	./lc11_containerwithmostwater
 	./lc13_romantointeger
 	./lc1431_greatestamongkids
 	./lc1456_maxNumberOfVowelsInASubstringOfGivenLength
+	./lc1493_longestSubarrayOf1sAfterDeletingOneElement
 	./lc151_reversewords
 	./lc1679_maxnumberofksumpairs
 	./lc1768_mergestringsalternately
@@ -20,4 +22,5 @@ use (
 	./lc643_maxAverageSubarrayI
 	./lc75_gcd
 	./lc9_palindrome
+	./practice
 )

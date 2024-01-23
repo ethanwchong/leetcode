@@ -3,28 +3,28 @@ package main
 import "fmt"
 
 func longestOnes(nums []int, k int) int {
-	maxLen := 0
-	zeroes := 0
-
-	for startWindow, endWindow := 0, 0; endWindow < len(nums); endWindow++ {
-		if nums[endWindow] == 0 {
-			zeroes++
+	var left, right, zeroCounter, result int
+	for i := 0; i < len(nums); i++ {
+		if nums[i] == 0 {
+			zeroCounter++
 		}
-
-		if zeroes > k {
-			if nums[startWindow] == 0 {
-				zeroes--
+		for zeroCounter > k {
+			if nums[left] == 0 {
+				zeroCounter--
 			}
-			startWindow++
+			left++
 		}
-
-		windowLen := endWindow - startWindow + 1
-		if maxLen < windowLen {
-			maxLen = windowLen
-		}
+		right++
+		result = max(result, right-left)
 	}
+	return result
+}
 
-	return maxLen
+func max(x, y int) int {
+	if x < y {
+		return y
+	}
+	return x
 }
 
 func main() {

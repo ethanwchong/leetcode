@@ -27,10 +27,34 @@ func mergeAlternately(word1 string, word2 string) string {
 	return strings.Join(mS, "")
 }
 
+func mergeAlternately2(word1 string, word2 string) string {
+	var i, j int = 0, 0
+	stringBuf := ""
+	for i < len(word1) && j < len(word2) {
+		stringBuf += string(word1[i]) + string(word2[i])
+		i++
+		j++
+	}
+	for i < len(word1) {
+		stringBuf += string(word1[i])
+		i++
+	}
+	for j < len(word2) {
+		stringBuf += string(word2[i])
+		j++
+	}
+
+	return stringBuf
+}
+
 func main() {
 	fmt.Println(mergeAlternately("ACE", "BD"))
 	fmt.Println(mergeAlternately("MONKEY", "BOY"))
 	fmt.Println(mergeAlternately("BOY", "GIRL"))
+	fmt.Println(mergeAlternately2("ACE", "BD"))
+	fmt.Println(mergeAlternately2("MONKEY", "BOY"))
+	fmt.Println(mergeAlternately2("BOY", "GIRL"))
+
 }
 
 /*
