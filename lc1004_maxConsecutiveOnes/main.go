@@ -16,6 +16,8 @@ func longestOnes(nums []int, k int) int {
 		}
 		right++
 		result = max(result, right-left)
+		fmt.Printf("\nCounter: %d", zeroCounter)
+		fmt.Printf("\nNums: %v", nums)
 	}
 	return result
 }

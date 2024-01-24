@@ -68,9 +68,6 @@ func maxVowels(s string, k int) int {
 		if evalMax == k {
 			return evalMax
 		}
-		if evalMax > max {
-			max = evalMax
-		}
 		p++
 	}
 	return max
